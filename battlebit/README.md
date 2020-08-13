@@ -97,13 +97,13 @@ The next step in the project involves implementing local gameplay mechanics.  Yo
 
 ```
 ? - show help
-load [0-1] <string> - load a ship layout file for the given player
+load [0-1] <string> - load a ship layout specification for the given player
 show [0-1] - shows the board for the given player
 say <string> - Send the string to all players as part of a chat
-fire [0-1] [0-7] [0-7] - fire at the given position
+fire [0-1] [0-7] [0-7] - the given player fires at the given position
 reset - reset the game
 server - start the server
-exit - quit the server
+exit - quit
 ```
 
 You have been provided with a helper library `char_buff.h/char_buff.c` that makes it easier to deal with strings in the project.
@@ -120,13 +120,9 @@ The client commands are:
 
 ```
 ? - show help
-load <string> - load a ship layout file for the current player
+load <string> - load a ship layout specification for the current player
 show - shows the board for the current player
 say <string> - Send the string to all players as part of a chat
 fire [0-7] [0-7] - fire at the given position of the opponent
 exit - quit the server
 ```
-
-#### Assembly Programming Requirement
-
-TBD
