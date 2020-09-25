@@ -1,4 +1,4 @@
-/snap/clion/124/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/susan/school/csci-366-fall2020/battlebit/googletest
+/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/susan/school/csci-366-fall2020-private/battlebit/googletest
 -- The C compiler identification is GNU 9.3.0
 -- The CXX compiler identification is GNU 9.3.0
 -- Check for working C compiler: /usr/bin/cc
@@ -13,7 +13,7 @@
 -- Detecting CXX compiler ABI info - done
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Found PythonInterp: /usr/bin/python3.8 (found version "3.8.2") 
+-- Found PythonInterp: /usr/bin/python (found version "2.7.18") 
 -- Looking for pthread.h
 -- Looking for pthread.h - found
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
@@ -50,7 +50,7 @@ CMake Warning (dev) at CMakeLists.txt:9 (add_executable):
 
   and other libraries with known full path:
 
-    /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/libgtestd.a
+    /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/libgtestd.a
 
   CMake is adding directories in the second list to the linker search path in
   case they are needed to find libraries from the first list (for backwards
@@ -60,4 +60,4 @@ CMake Warning (dev) at CMakeLists.txt:9 (add_executable):
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Generating done
--- Build files have been written to: /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug
+-- Build files have been written to: /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug
