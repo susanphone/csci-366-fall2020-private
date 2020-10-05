@@ -9,3 +9,4 @@ find_max:
         ;; after the comparison, decrement the count, bump the
         ;; array pointer by 8 (long long = 64 bits = 8 bytes)
         ;; and if the counter is greater than zero, loop
+        ret
