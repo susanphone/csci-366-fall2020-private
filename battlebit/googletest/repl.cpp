@@ -14,8 +14,8 @@ TEST(repl_print_ships, print_ships){
     struct player_info player_info = gameon->players[0];
     repl_print_ships(&player_info, buffer);
     //cb_print(buffer);
-    char * expected = "  0 1 2 3 4 5 6 7 \n"
-                      "0 * * * * *       \n"
+    char * expected = "  0 1 2 3 4 5 6 7 \n"        // test whether there is a 1 or 0 in each position
+                      "0 * * * * *       \n"        // print a 2 by 2 array by USING NESTED FOR LOOPS
                       "1               * \n"
                       "2 *             * \n"
                       "3 *   * * *       \n"

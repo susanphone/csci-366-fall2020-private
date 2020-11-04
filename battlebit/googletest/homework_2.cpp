@@ -7,6 +7,22 @@ char * print_binary_representation(unsigned int i, char *buffer){
     // fill out remaining 32 bits, 1 or 0 depending on the value in the number i
     unsigned int total = i;
     int index = 33;
+    /** HIS SOLUTION
+char * print_binary_representation(unsigned int i, char *buffer){
+buffer[0] = '0';
+buffer[1] = 'b';
+for (int i = 0; i < 32; i++) {
+     unsigned int mask = 1u << (31u - i);
+     if (value & mask) {
+        buffer[i + 2] = '1';  // 0 is false and non-zero is true
+     } else {
+        buffer[i + 2] = '0';
+        }
+     }
+return buffer;
+}
+*/
+
     while (index > 1) {
         int r = total % 2;
         int d = total / 2;
@@ -22,7 +38,6 @@ char * print_binary_representation(unsigned int i, char *buffer){
 /* PROBLEM 1: Implement a print_binary_representation function that takes an
  * unsigned integer and created as string representation of the binary values
  * of that number.
- *000000000000000000000000000000
  *0b00000000000000000000000000000000
  * The test below show what the expected values are for given inputs
  */
@@ -45,6 +60,25 @@ TEST(print_binary_representation, works) {
  * HINT: C is pass by value
  */
 
+/** HIS SOLUTION:
+struct Person {
+    char * name;
+    int age;
+};
+
+Person set_my_age(struct Person * p) {
+    (*p).age = 44;              //dereference operator
+    OR
+    p->age = 44;                // Easy substitution for dereference operator: BINDING
+}
+
+int get_my_age() {
+    struct Person me;
+    me.name = "Carson";
+    me = set_my_age(&me);     // Pass field in a pointer        (&(me->foo)->bar)
+    return me.age;
+}
+*/
 struct Person {
     char * name;
     int age;
