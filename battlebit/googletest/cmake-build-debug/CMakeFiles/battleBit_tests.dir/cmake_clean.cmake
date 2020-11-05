@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/battleBit_tests.dir/char_buff.o"
+  "CMakeFiles/battleBit_tests.dir/game.o"
   "battleBit_tests"
   "battleBit_tests.pdb"
 )

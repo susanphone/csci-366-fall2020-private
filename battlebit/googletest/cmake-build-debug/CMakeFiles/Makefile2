@@ -55,10 +55,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/124/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/124/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -74,6 +74,7 @@ CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020/battlebit/googletest/cma
 
 # The main recursive "all" target.
 all: CMakeFiles/battleBit_tests.dir/all
+all: CMakeFiles/homework_2.dir/all
 all: lib/all
 
 .PHONY : all
@@ -85,6 +86,7 @@ preinstall: lib/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/battleBit_tests.dir/clean
+clean: CMakeFiles/homework_2.dir/clean
 clean: lib/clean
 
 .PHONY : clean
@@ -157,12 +159,12 @@ CMakeFiles/battleBit_tests.dir/all: lib/googletest/CMakeFiles/gtest_main.dir/all
 CMakeFiles/battleBit_tests.dir/all: lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/battleBit_tests.dir/build.make CMakeFiles/battleBit_tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/battleBit_tests.dir/build.make CMakeFiles/battleBit_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target battleBit_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target battleBit_tests"
 .PHONY : CMakeFiles/battleBit_tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/battleBit_tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/battleBit_tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/battleBit_tests.dir/rule
@@ -178,14 +180,42 @@ CMakeFiles/battleBit_tests.dir/clean:
 .PHONY : CMakeFiles/battleBit_tests.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/homework_2.dir
+
+# All Build rule for target.
+CMakeFiles/homework_2.dir/all: lib/googletest/CMakeFiles/gtest_main.dir/all
+CMakeFiles/homework_2.dir/all: lib/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homework_2.dir/build.make CMakeFiles/homework_2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homework_2.dir/build.make CMakeFiles/homework_2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=12,13 "Built target homework_2"
+.PHONY : CMakeFiles/homework_2.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/homework_2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/homework_2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/homework_2.dir/rule
+
+# Convenience name for target.
+homework_2: CMakeFiles/homework_2.dir/rule
+
+.PHONY : homework_2
+
+# clean rule for target.
+CMakeFiles/homework_2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/homework_2.dir/build.make CMakeFiles/homework_2.dir/clean
+.PHONY : CMakeFiles/homework_2.dir/clean
+
+#=============================================================================
 # Target rules for target lib/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-lib/googlemock/CMakeFiles/gmock_main.dir/all: lib/googletest/CMakeFiles/gtest.dir/all
 lib/googlemock/CMakeFiles/gmock_main.dir/all: lib/googlemock/CMakeFiles/gmock.dir/all
+lib/googlemock/CMakeFiles/gmock_main.dir/all: lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=6,7 "Built target gmock_main"
 .PHONY : lib/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -212,7 +242,7 @@ lib/googlemock/CMakeFiles/gmock_main.dir/clean:
 lib/googlemock/CMakeFiles/gmock.dir/all: lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googlemock/CMakeFiles/gmock.dir/build.make lib/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googlemock/CMakeFiles/gmock.dir/build.make lib/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=4,5 "Built target gmock"
 .PHONY : lib/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -239,7 +269,7 @@ lib/googlemock/CMakeFiles/gmock.dir/clean:
 lib/googletest/CMakeFiles/gtest_main.dir/all: lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f lib/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/CMakeFiles/gtest_main.dir/build.make lib/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=10,11 "Built target gtest_main"
 .PHONY : lib/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -266,7 +296,7 @@ lib/googletest/CMakeFiles/gtest_main.dir/clean:
 lib/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f lib/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib/googletest/CMakeFiles/gtest.dir/build.make lib/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=8,9 "Built target gtest"
 .PHONY : lib/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.

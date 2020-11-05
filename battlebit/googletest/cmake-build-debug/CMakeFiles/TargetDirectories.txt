@@ -1,10 +1,11 @@
-/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/install/strip.dir
-/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/install/local.dir
-/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/battleBit_tests.dir
-/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/install.dir
 /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/battleBit_tests.dir
+/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/install/strip.dir
+/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/install/local.dir
+/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/homework_2.dir
+/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/CMakeFiles/install/strip.dir
 /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/CMakeFiles/install/local.dir
 /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/CMakeFiles/edit_cache.dir

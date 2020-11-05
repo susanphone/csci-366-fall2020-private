@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/battleBit_tests.dir/char_buff.o  -o battleBit_tests   -L/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib  lib/libgtestd.a lib/libgtest_maind.a -lbattleBit_lib lib/libgtestd.a -lpthread 
+/usr/bin/c++  -g  -rdynamic CMakeFiles/battleBit_tests.dir/char_buff.o CMakeFiles/battleBit_tests.dir/game.o  -o battleBit_tests   -L/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib  lib/libgtestd.a lib/libgtest_maind.a -lbattleBit_lib lib/libgtestd.a -lpthread 
