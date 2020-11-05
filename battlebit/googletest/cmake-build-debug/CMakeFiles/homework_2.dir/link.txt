@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 /usr/bin/c++  -g  -rdynamic CMakeFiles/homework_2.dir/homework_2.o  -o homework_2   -L/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib  lib/libgtestd.a lib/libgtest_maind.a -lbattleBit_lib lib/libgtestd.a -lpthread 
+=======
+/usr/bin/c++  -g  -rdynamic CMakeFiles/homework_2.dir/homework_2.o  -o homework_2   -L/home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib  lib/libgtestd.a lib/libgtest_maind.a -lbattleBit_lib lib/libgtestd.a -lpthread 
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383

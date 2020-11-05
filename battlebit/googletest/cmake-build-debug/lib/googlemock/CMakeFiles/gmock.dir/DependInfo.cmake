@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googlemock/src/gmock-all.cc" "/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+  "/home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googlemock/src/gmock-all.cc" "/home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -18,7 +18,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -6,5 +6,9 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
+<<<<<<< HEAD
 CXX_INCLUDES = -I/home/susan/school/csci-366-fall2020/battlebit/googletest/../src -isystem /home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googletest/include -isystem /home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googletest 
+=======
+CXX_INCLUDES = -I/home/susan/school/csci-366-fall2020-private/battlebit/googletest/../src -isystem /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googletest/include -isystem /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googletest 
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 

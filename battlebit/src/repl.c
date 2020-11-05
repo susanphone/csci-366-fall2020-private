@@ -72,6 +72,9 @@ void repl_execute_command(struct char_buff * buffer) {
 
         } else if (strcmp(command, "nasm") == 0) {
             nasm_hello_world();
+        } else if (strcmp(command, "shortcut") == 0) {
+            // update player 1 to only have a single ship in position 0, 0
+            game_get_current()->players[1].ships = 1ull;
         } else {
             printf("Unknown Command: %s\n", command);
         }
@@ -90,9 +93,22 @@ void repl_print_board(game *game, int player, char_buff * buffer) {
 }
 
 void repl_print_ships(player_info *player_info, char_buff *buffer) {
-    // print ships ascii
+// Taking ships and render 8X8 ships grid.
+    //TODO: Use two nest for loops for 2 by 2 array
+        // include column number
+    /*TODO: Step 4 - print out the visual ships representation for the console.
+     *  You will need to use bit masking for each position to determine if a ship is at the position or not.
+     // If it is present you need to print an X.  If not, you need to print a space character ' '
+     */
 }
 
 void repl_print_hits(struct player_info *player_info, struct char_buff *buffer) {
-    // print hits ascii
+    // almost the same as step 4 except with hits and misses and shots
+    /*TODO: Step 6 - Implement this to print out a visual representation of the shots
+     // that the player has taken and if they are a hit or not.
+     TODO: You will again need to use bit-masking,
+     * but this time you will need to consult two values: both hits and shots values in the players game struct.
+     // If a shot was fired at a given spot and it was a hit, print 'H', if it was a miss, print 'M'.
+     // If no shot was taken at a position, print a space character ' '
+     */
 }

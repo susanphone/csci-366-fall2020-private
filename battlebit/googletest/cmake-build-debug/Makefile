@@ -59,19 +59,26 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
+<<<<<<< HEAD
 CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
 RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
+=======
+CMAKE_COMMAND = /snap/clion/126/bin/cmake/linux/bin/cmake
+
+# The command to remove a file.
+RM = /snap/clion/126/bin/cmake/linux/bin/cmake -E rm -f
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/susan/school/csci-366-fall2020/battlebit/googletest
+CMAKE_SOURCE_DIR = /home/susan/school/csci-366-fall2020-private/battlebit/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug
+CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,13 +86,21 @@ CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020/battlebit/googletest/cma
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+=======
+	/snap/clion/126/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+=======
+	/snap/clion/126/bin/cmake/linux/bin/cmake -P cmake_install.cmake
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/fast
 
 # Special rule for the target list_install_components
@@ -101,7 +116,11 @@ list_install_components/fast: list_install_components
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+=======
+	/snap/clion/126/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -112,31 +131,51 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+=======
+	/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+=======
+	/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+=======
+	/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+=======
+	/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+=======
+	/snap/clion/126/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -146,9 +185,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/CMakeFiles /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -299,6 +338,24 @@ homework_2.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/homework_2.dir/build.make CMakeFiles/homework_2.dir/homework_2.s
 .PHONY : homework_2.s
 
+<<<<<<< HEAD
+=======
+# target to build an object file
+repl.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/battleBit_tests.dir/build.make CMakeFiles/battleBit_tests.dir/repl.o
+.PHONY : repl.o
+
+# target to preprocess a source file
+repl.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/battleBit_tests.dir/build.make CMakeFiles/battleBit_tests.dir/repl.i
+.PHONY : repl.i
+
+# target to generate assembly for a file
+repl.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/battleBit_tests.dir/build.make CMakeFiles/battleBit_tests.dir/repl.s
+.PHONY : repl.s
+
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -326,6 +383,12 @@ help:
 	@echo "... homework_2.o"
 	@echo "... homework_2.i"
 	@echo "... homework_2.s"
+<<<<<<< HEAD
+=======
+	@echo "... repl.o"
+	@echo "... repl.i"
+	@echo "... repl.s"
+>>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : help
 
 
