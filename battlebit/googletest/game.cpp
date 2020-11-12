@@ -224,7 +224,7 @@ TEST(add_ship_horizontal,empty_ship){
     //char * spec = "C00b02D23S47p71";
     //game_load_board(gameon, 0, spec);
     //EXPECT_TRUE(strcmp("Baz", "Baz") == 0);
-    ASSERT_EQ(add_ship_horizontal(player_info,1,8,0),1);
+    ASSERT_EQ(add_ship_horizontal(player_info,1,8,0),-1);
 }
 TEST(add_ship_horizontal,load_ship){
     game_init();
@@ -245,7 +245,7 @@ TEST(add_ship_vertical,empty_ship){
     //char * spec = "C00b02D23S47p71";
     //game_load_board(gameon, 0, spec);
     //EXPECT_TRUE(strcmp("Baz", "Baz") == 0);
-    ASSERT_EQ(add_ship_vertical(player_info,1,8,0),1);
+    ASSERT_EQ(add_ship_vertical(player_info,1,8,0),-1);
 }
 TEST(add_ship_vertical,load_ship){
     game_init();
@@ -281,7 +281,7 @@ TEST(game_load_board,incomplete_spec){
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
     spec = "C00c02D23S47p71";//invalid spec- Multiple carriers
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
-    spec = "B00b02D23S47p71";//invalid spec- Multiple batleships
+    spec = "B00b02D23S47p71";//invalid spec- Multiple battleships
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
     spec = "C00b02D23S47d71";//invalid spec- Multiple destroyers
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);

@@ -44,6 +44,7 @@ int handle_client_connect(int player) {
      * be working against network sockets rather than standard out, and
      * TODO: you will need to coordinate turns via the game::status field.
      */
+    char_buff buffer[110];
     char *command = cb_tokenize(buffer, " \n");
     if (command) {
         // TODO: Loop reading commands
@@ -158,7 +159,8 @@ int run_server() {
             //TODO: Spin off another thread
             //TODO: Accept commands and show output
             //TODO: call handle_client_connect
-            pthread_create(&TODO, NULL, run_server(), NULL);
+            pthread_t player1;
+            pthread_create(&player1, NULL, run_server, NULL);
             send(client_socket_fd, message,
                  strlen(message), 0);
             close(client_socket_fd);
@@ -174,6 +176,7 @@ int server_start() {
      */
     // Concurrency.c
     // TODO: store into server struct
+    // pthread: path threads, two players on different threads. 
     pthread_t player1, player2;
     // TODO: Create a pthread struct pthread_create
     pthread_create(&player1, NULL, run_server, 0);

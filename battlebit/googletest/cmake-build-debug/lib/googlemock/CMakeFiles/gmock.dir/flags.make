@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTH
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googlemock/include -I/home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googlemock -isystem /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googletest/include -isystem /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googletest 
+CXX_INCLUDES = -I/home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googlemock/include -I/home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googlemock -isystem /home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googletest/include -isystem /home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googletest 
 

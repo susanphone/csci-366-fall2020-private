@@ -1,4 +1,4 @@
-# Install script for directory: /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib
+# Install script for directory: /home/susan/school/csci-366-fall2020/battlebit/googletest/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock/cmake_install.cmake")
+  include("/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock/cmake_install.cmake")
 
 endif()
 

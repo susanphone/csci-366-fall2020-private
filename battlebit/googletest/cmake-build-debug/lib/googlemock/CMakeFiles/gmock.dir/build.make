@@ -54,26 +54,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-<<<<<<< HEAD
 CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
 RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
-=======
-CMAKE_COMMAND = /snap/clion/126/bin/cmake/linux/bin/cmake
-
-# The command to remove a file.
-RM = /snap/clion/126/bin/cmake/linux/bin/cmake -E rm -f
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/susan/school/csci-366-fall2020-private/battlebit/googletest
+CMAKE_SOURCE_DIR = /home/susan/school/csci-366-fall2020/battlebit/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug
+CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include lib/googlemock/CMakeFiles/gmock.dir/depend.make
@@ -86,16 +79,16 @@ include lib/googlemock/CMakeFiles/gmock.dir/flags.make
 
 lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: lib/googlemock/CMakeFiles/gmock.dir/flags.make
 lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: ../lib/googlemock/src/gmock-all.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googlemock/src/gmock-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googlemock/src/gmock-all.cc
 
 lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock.dir/src/gmock-all.cc.i"
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
 
 lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock.dir/src/gmock-all.cc.s"
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
 
 # Object files for target gmock
 gmock_OBJECTS = \
@@ -107,9 +100,9 @@ gmock_EXTERNAL_OBJECTS =
 lib/libgmockd.a: lib/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
 lib/libgmockd.a: lib/googlemock/CMakeFiles/gmock.dir/build.make
 lib/libgmockd.a: lib/googlemock/CMakeFiles/gmock.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../libgmockd.a"
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../libgmockd.a"
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean_target.cmake
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 lib/googlemock/CMakeFiles/gmock.dir/build: lib/libgmockd.a
@@ -117,10 +110,10 @@ lib/googlemock/CMakeFiles/gmock.dir/build: lib/libgmockd.a
 .PHONY : lib/googlemock/CMakeFiles/gmock.dir/build
 
 lib/googlemock/CMakeFiles/gmock.dir/clean:
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean.cmake
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock.dir/cmake_clean.cmake
 .PHONY : lib/googlemock/CMakeFiles/gmock.dir/clean
 
 lib/googlemock/CMakeFiles/gmock.dir/depend:
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/susan/school/csci-366-fall2020-private/battlebit/googletest /home/susan/school/csci-366-fall2020-private/battlebit/googletest/lib/googlemock /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/susan/school/csci-366-fall2020/battlebit/googletest /home/susan/school/csci-366-fall2020/battlebit/googletest/lib/googlemock /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : lib/googlemock/CMakeFiles/gmock.dir/depend
 

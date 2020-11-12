@@ -59,26 +59,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-<<<<<<< HEAD
 CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
 RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
-=======
-CMAKE_COMMAND = /snap/clion/126/bin/cmake/linux/bin/cmake
-
-# The command to remove a file.
-RM = /snap/clion/126/bin/cmake/linux/bin/cmake -E rm -f
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/susan/school/csci-366-fall2020-private/battlebit/googletest
+CMAKE_SOURCE_DIR = /home/susan/school/csci-366-fall2020/battlebit/googletest
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug
+CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,51 +79,31 @@ CMAKE_BINARY_DIR = /home/susan/school/csci-366-fall2020-private/battlebit/google
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-=======
-	/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/strip
 
 # Special rule for the target install/strip
 install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-=======
-	/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/strip/fast
 
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-=======
-	/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/local
 
 # Special rule for the target install/local
 install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-=======
-	/snap/clion/126/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/local/fast
 
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-=======
-	/snap/clion/126/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -141,11 +114,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-=======
-	/snap/clion/126/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -166,33 +135,25 @@ list_install_components/fast: list_install_components
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-=======
-	/snap/clion/126/bin/cmake/linux/bin/cmake -P cmake_install.cmake
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install
 
 # Special rule for the target install
 install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-<<<<<<< HEAD
 	/snap/clion/129/bin/cmake/linux/bin/cmake -P cmake_install.cmake
-=======
-	/snap/clion/126/bin/cmake/linux/bin/cmake -P cmake_install.cmake
->>>>>>> 27fe3e62e530d027cdd4f1ebf89b32d4ede07383
 .PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/CMakeFiles /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/lib/CMakeFiles/progress.marks
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug/CMakeFiles 0
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib/CMakeFiles/progress.marks
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/clean
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/clean
 .PHONY : clean
 
 # The main clean target
@@ -202,17 +163,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -238,6 +199,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/susan/school/csci-366-fall2020-private/battlebit/googletest/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/homework_3.dir/homework_3.o  -o homework_3   -L/home/susan/school/csci-366-fall2020/battlebit/googletest/cmake-build-debug/lib  lib/libgtestd.a lib/libgtest_maind.a lib/libgtestd.a -lpthread 
