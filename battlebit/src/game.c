@@ -58,50 +58,13 @@ int game_fire(game *game, int player, int x, int y) {
 }
 
 unsigned long long int xy_to_bitval(int x, int y) {
-//    1 << 0 == 1;
-//    1 << 1 == 2;
-//    1 << 2 == 4;
-//    ...
-//    1 << 8 == 256;
-//TODO: use x and y to determine start and end of x and y coordinates
+    // bounds
     if (x > 7 || y > 7 || x < 0 || y < 0) {
         return 0;
     }
-    unsigned long long varx = 1ull;
-    varx = 1 << x;
-    unsigned long long vary = 1ull;
-    vary = 1 << (7 + y);
-
-    if (y == 0) {
-        return varx;
-    }
-    if (y == 7){
-        return (1ull << (vary-varx));
-    }else {
-        return (varx * vary);
-    }
+    // math formula to bit shift
+    return 1ull << (8 * y) + x;
 }
-
-// bounds checks and one line math xy map to
-// Small function, hard conceptually, mindset change to binary
-// column 0 row 2 bit shift 8 spots to the left
-/** TODO: Talk to Spencer about Bitwise Operators
- * Step 1 - implement this function.
- * We are taking an x, y position
- * and using bitwise operators, converting that to an unsigned long long
- * with a 1 in the position corresponding to that x, y
- * x:0, y:0 == 0b00000...0001 (the one is in the first position)
- * x:1, y: 0 == 0b00000...10 (the one is in the second position)
- * ....
- * x:0, y: 1 == 0b100000000 (the one is in the eighth position)
- * TODO: you will need to use bitwise operators and some math to produce the right value.
- */
-//<<<<<<< HEAD
-//
-//=======
-//    return 1ull; // return one unsigned long long
-////>>>>>>> 0e117b03de607e4b1f64b9444aeec054edf4e43f
-//}
 
 struct game * game_get_current() {
     return GAME;
