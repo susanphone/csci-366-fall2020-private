@@ -1,0 +1,31 @@
+Scanning dependencies of target battleBit_lib
+[  3%] Building C object CMakeFiles/battleBit_lib.dir/src/main.c.o
+[  6%] Building C object CMakeFiles/battleBit_lib.dir/src/server.c.o
+[  9%] Building C object CMakeFiles/battleBit_lib.dir/src/repl.c.o
+[ 12%] Building C object CMakeFiles/battleBit_lib.dir/src/game.c.o
+[ 15%] Building C object CMakeFiles/battleBit_lib.dir/src/char_buff.c.o
+[ 18%] Building C object CMakeFiles/battleBit_lib.dir/src/helper.c.o
+[ 21%] Building ASM_NASM object CMakeFiles/battleBit_lib.dir/src/assembly_demo.asm.o
+[ 24%] Linking C static library libbattleBit_lib.a
+[ 24%] Built target battleBit_lib
+Scanning dependencies of target battleBit
+[ 27%] Building C object CMakeFiles/battleBit.dir/src/main.c.o
+[ 30%] Building C object CMakeFiles/battleBit.dir/src/server.c.o
+[ 33%] Building C object CMakeFiles/battleBit.dir/src/repl.c.o
+[ 36%] Building C object CMakeFiles/battleBit.dir/src/game.c.o
+[ 39%] Building C object CMakeFiles/battleBit.dir/src/char_buff.c.o
+[ 42%] Building C object CMakeFiles/battleBit.dir/src/helper.c.o
+[ 45%] Building ASM_NASM object CMakeFiles/battleBit.dir/src/assembly_demo.asm.o
+[ 48%] Linking C executable battleBit
+[ 48%] Built target battleBit
+Scanning dependencies of target gtest
+[ 51%] Building CXX object googletest/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
+[ 54%] Linking CXX static library ../../../lib/libgtest.a
+[ 54%] Built target gtest
+Scanning dependencies of target gtest_main
+[ 57%] Building CXX object googletest/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o
+[ 60%] Linking CXX static library ../../../lib/libgtest_main.a
+[ 60%] Built target gtest_main
+Scanning dependencies of target homework_3
+[ 63%] Building CXX object googletest/CMakeFiles/homework_3.dir/homework_3.cpp.o
+[ 66%] Building ASM_NASM object googletest/CMakeFiles/homework_3.dir/homework_3.asm.o
