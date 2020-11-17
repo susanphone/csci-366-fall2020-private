@@ -10,7 +10,7 @@
 #define BOARD_DIMENSION 8
 #define SHIP_TYPES 5
 
-enum game_status {CREATED, INITIALIZED, PLAYER_0_TURN, PLAYER_1_TURN, PLAYER_0_WINS, PLAYER_1_WINS}; // itialize once both players have shown up
+enum game_status {CREATED, INITIALIZED, PLAYER_0_TURN, PLAYER_1_TURN, PLAYER_0_WINS, PLAYER_1_WINS}; // initialize once both players have shown up
 
 typedef struct player_info {
     unsigned long long hits;    //think as 64 bits
@@ -22,6 +22,7 @@ typedef struct game {
     enum game_status status;
     player_info players[2];
 } game;
+
 
 struct game * game_get_current();
 

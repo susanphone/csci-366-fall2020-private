@@ -2,7 +2,7 @@
 
 extern "C" {
 #include "repl.h"
-}
+};
 
 TEST(repl_print_ships, print_ships){
     game_init();

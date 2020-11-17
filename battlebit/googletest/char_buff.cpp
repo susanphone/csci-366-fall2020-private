@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 extern "C" {
 #include "char_buff.h"
-}
+};
 
 TEST(char_buff, bootstrap) {
     struct char_buff *buffer = cb_create(2000);

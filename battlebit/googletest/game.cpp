@@ -3,7 +3,7 @@
 extern "C" {
 #include "game.h"
 #include "helper.h"
-}
+};
 
 TEST(xy_to_bitval, good_values) {
     // row 1
