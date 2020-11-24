@@ -279,7 +279,7 @@ TEST(game_load_board,incomplete_spec){
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
     spec = "C-1-1b02D23S47p71";//invalid spec
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
-    spec = "A00b02D23S47p71";//invalid spec
+//    spec = "A00b02D23S47p71";//invalid spec
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
     spec = "C00c02D23S47p71";//invalid spec- Multiple carriers
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);

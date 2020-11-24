@@ -101,8 +101,8 @@ struct game *game_get_current() {
 }
 
 int game_load_board(struct game *game, int player, char *spec) {
-// big ugly function; 30 Lines of code
-// Loop through each spec make sure sure boats stay in bounds(Example board: C00b02D23S47p71)
+
+    // TODO: if spec contains other letters, return -1
     if (spec == NULL) {
         return -1;
     }
@@ -171,11 +171,18 @@ int game_load_board(struct game *game, int player, char *spec) {
         }
 
         if (spec[i] >= 'A' && spec[i] <= 'Z') {
-            if (add_ship_horizontal((player_info *)&player, x, y, lengthOfShip) != 1) {
-                return -1;
+            if (add_ship_horizontal((player_info *)&player, x, y, lengthOfShip) == 1) {
+                &GAME->players[player];
+                continue;
             }
         } else {
-            if (add_ship_vertical((player_info *)&player, x, y, lengthOfShip) != 1) {
+            if (add_ship_vertical((player_info *)&player, x, y, lengthOfShip) == 1) {
+                &GAME->players[player];
+                continue;
+            } else {
+                if ((game->players->ships & xy_to_bitval(x, y)) != 0ULL) {
+                    return -1;
+                }
                 return -1;
             }
         }
@@ -183,10 +190,8 @@ int game_load_board(struct game *game, int player, char *spec) {
     }
     if (isTakenB == true && isTakenC == true && isTakenD == true && isTakenP && isTakenS == true)
     {
-//        game->status = INITIALIZED;
-//        game_init_player_info((player_info *) &game->players->ships);
-//        game->players->ships = 1ull;
-        game_init();
+
+
         return 1;
     }
     return -1;
