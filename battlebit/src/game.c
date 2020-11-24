@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "game.h"
-#include "repl.h"
 #include <ctype.h>
 
 /**TODO: STEP 10 - Synchronization: the GAME structure will be accessed by both players interacting
@@ -38,18 +37,22 @@ void game_init_player_info(player_info *player_info) {
 int game_fire(game *game, int player, int x, int y) {
     // Tricky code but not a lot of code
 
-    // change players
     int opponent = (player + 1) % 2; // stupid trick in C: add one mod by 2
     // ^- lets you flip between players
-    game->players[opponent].ships;
+    game->players[player].ships;
+//    game_init_player_info((player_info *) opponent);
+
+    //empty_game
     if (game->status != INITIALIZED) {
         return 0;
     }
-    else if (game->players[0].ships == 0) {
+    //game status
+    if (game->players[0].ships == 0) {
         game->status = PLAYER_0_WINS;
     } else if (game->players[1].ships == 0){
         game->status = PLAYER_1_WINS;
-    } else if (opponent == 0) {
+    }
+    if (opponent == 0) {
         game->status = PLAYER_0_TURN;
     } else if (opponent == 1) {
         game->status = PLAYER_1_TURN;
@@ -61,7 +64,7 @@ int game_fire(game *game, int player, int x, int y) {
     }
 
     if (xy_to_bitval(x, y) != 0ULL) {
-//        repl_print_hits((player_info *) game->players[opponent].ships, (char_buff *) game);
+//        game->players[player].ships;
         return 1;
     } else {
         //update game
@@ -178,10 +181,12 @@ int game_load_board(struct game *game, int player, char *spec) {
         }
 
     }
-    if (isTakenB == true && isTakenC == true && isTakenD == true && isTakenP && isTakenS == true) {
+    if (isTakenB == true && isTakenC == true && isTakenD == true && isTakenP && isTakenS == true)
+    {
 //        game->status = INITIALIZED;
 //        game_init_player_info((player_info *) &game->players->ships);
 //        game->players->ships = 1ull;
+        game_init();
         return 1;
     }
     return -1;
