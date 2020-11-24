@@ -12,6 +12,10 @@
  * asynchronously with the server.  Therefore the data must be protected to avoid race conditions.
  * Add the appropriate synchronization needed to ensure a clean battle.
  */
+ // done by inspections
+ // mutex in file and log all interactions
+ // create a lock and sync to game state
+ pthread_mutex_lock();
 
 static game *GAME = NULL;
 
@@ -80,7 +84,7 @@ unsigned long long int xy_to_bitval(int x, int y) {
         return 0;
     }
     // math formula to bit shift
-    return 1ull << (8 * y) + x;
+    return 1ull << ((8 * y) + x);
 }
 
 struct game *game_get_current() {
@@ -102,17 +106,18 @@ int game_load_board(struct game *game, int player, char *spec) {
 
     // 15 characters
     for (int i = 0; i < 15; i += 3) {
-        int x = spec[i + 1];
-        int y = spec[i + 2];
-        if (!isdigit(x) || !isdigit(y)) {
+        if (!isdigit(spec[i+1]) || !isdigit(spec[i+2])) {
             return -1;
         }
+        int x = spec[i + 1]-'0';
+        int y = spec[i + 2]-'0';
+
         if ((void *) spec[i] == NULL) {
             return -1;
         }
         char temp = tolower(spec[i]);
         int lengthOfShip;
-        switch (tolower(spec[i])) {
+        switch (temp) {
             case 'c':
                 lengthOfShip = 5;
                 if (isTakenC) {
@@ -157,63 +162,62 @@ int game_load_board(struct game *game, int player, char *spec) {
                 lengthOfShip = 0;
                 break;
         }
+
         if (spec[i] >= 'A' && spec[i] <= 'Z') {
-            if (add_ship_horizontal((player_info *) player, x, y, lengthOfShip) == 1) {
-                game->players[player].ships; //change bit from 0 to 1
+            if (add_ship_horizontal((player_info *)&player, x, y, lengthOfShip) != 1) {
+                return -1;
             }
         } else {
-            if (add_ship_vertical((player_info *) player, x, y, lengthOfShip) == 1) {
-                game->players[player].ships;
+            if (add_ship_vertical((player_info *)&player, x, y, lengthOfShip) != 1) {
+                return -1;
             }
-        }
-
-        if (isTakenB == true && isTakenC == true && isTakenD == true && isTakenP && isTakenS == true) {
-        return 1;
         }
 
     }
+    if (isTakenB == true && isTakenC == true && isTakenD == true && isTakenP && isTakenS == true) {
+        return 1;
+    }
+    return -1;
 }
 
 int add_ship_horizontal(player_info *player, int x, int y, int length) {
     // cannot be added; out of bounds
-    if (x > 7 || y > 7 || x < 0 || y < 0) {
+    if (xy_to_bitval(x, y) == 0) {
         return -1;
     }
-    // if space is occupied, return -1
+//if occupy return -1
+    if ((player->ships & xy_to_bitval(x, y)) != 0ULL) {
+        return -1;
+    }
 
-//    if (length == 1 && x < 7 && y < 7) { //base case
-//        return 1;
-//    }
-    if (length == 1) {
+    if (length > 1) {
         if (add_ship_horizontal(player, x + 1, y, length - 1) == 1) {
-            // flip bit in x row n ^ (1 << k)
+            player->ships |= xy_to_bitval(x, y);
             return 1;
         }
     } else {
-        //flip bit
+        player->ships |= xy_to_bitval(x, y);
         return 1;
     }
-
 }
 
 int add_ship_vertical(player_info *player, int x, int y, int length) {
-    // cannot be added
-    if (x > 7 || y > 7 || x < 0 || y < 0) {
+    // cannot be added; out of bounds
+    if (xy_to_bitval(x, y) == 0) {
         return -1;
     }
-    // if space is occupied, return -1
+//if occupy return -1
+    if ((player->ships & xy_to_bitval(x, y)) != 0ULL) {
+        return -1;
+    }
 
-//    if (length == 1 && x < 7 && y < 7) { //base case
-//        return 1;
-//    }
-    if (length == 1) {
-        if (add_ship_vertical(player, x + 1, y, length - 1) == 1) {
-            // flip bit in y column n ^ (1 << k)
+    if (length > 1) {
+        if (add_ship_vertical(player, x, y + 1, length - 1) == 1) {
+            player->ships |= xy_to_bitval(x, y);
             return 1;
         }
     } else {
-        //flip bit
+        player->ships |= xy_to_bitval(x, y);
         return 1;
     }
-
 }
