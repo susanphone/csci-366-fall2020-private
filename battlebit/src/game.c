@@ -39,19 +39,22 @@ int game_fire(game *game, int player, int x, int y) {
 
     int opponent = (player + 1) % 2; // stupid trick in C: add one mod by 2
     // ^- lets you flip between players
-    game->players[player].ships;
+//    game->players[player].ships;
 //    game_init_player_info((player_info *) opponent);
 
     //empty_game
-    if (game->status != INITIALIZED) {
+    if (game->players->ships) {
+        game_init();
+    } else {
         return 0;
     }
-    //game status
+    //game status winner
     if (game->players[0].ships == 0) {
         game->status = PLAYER_0_WINS;
     } else if (game->players[1].ships == 0){
         game->status = PLAYER_1_WINS;
     }
+    // game status players turn
     if (opponent == 0) {
         game->status = PLAYER_0_TURN;
     } else if (opponent == 1) {
@@ -63,11 +66,12 @@ int game_fire(game *game, int player, int x, int y) {
         return 0;
     }
 
+    // hit or miss
     if (xy_to_bitval(x, y) != 0ULL) {
-//        game->players[player].ships;
+        game->players[opponent].hits++;
         return 1;
     } else {
-        //update game
+        game->players[opponent].shots++;
         return 0;
     }
 
@@ -171,13 +175,13 @@ int game_load_board(struct game *game, int player, char *spec) {
         }
 
         if (spec[i] >= 'A' && spec[i] <= 'Z') {
-            if (add_ship_horizontal((player_info *)&player, x, y, lengthOfShip) == 1) {
-                &GAME->players[player];
+            if (add_ship_horizontal(&GAME->players[player], x, y, lengthOfShip) == 1) {
+                &GAME->players[player].ships;
                 continue;
             }
         } else {
-            if (add_ship_vertical((player_info *)&player, x, y, lengthOfShip) == 1) {
-                &GAME->players[player];
+            if (add_ship_vertical(&GAME->players[player], x, y, lengthOfShip) == 1) {
+                &GAME->players[player].ships;
                 continue;
             } else {
                 if ((game->players->ships & xy_to_bitval(x, y)) != 0ULL) {
@@ -190,8 +194,7 @@ int game_load_board(struct game *game, int player, char *spec) {
     }
     if (isTakenB == true && isTakenC == true && isTakenD == true && isTakenP && isTakenS == true)
     {
-
-
+//        GAME->players->ships = 17;
         return 1;
     }
     return -1;
