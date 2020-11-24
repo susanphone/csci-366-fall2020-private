@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "game.h"
+#include "repl.h"
 #include <ctype.h>
-
 
 /**TODO: STEP 10 - Synchronization: the GAME structure will be accessed by both players interacting
  * asynchronously with the server.  Therefore the data must be protected to avoid race conditions.
@@ -37,31 +37,36 @@ void game_init_player_info(player_info *player_info) {
 
 int game_fire(game *game, int player, int x, int y) {
     // Tricky code but not a lot of code
-    unsigned long long shot = xy_to_bitval(x, y);
-
 
     // change players
     int opponent = (player + 1) % 2; // stupid trick in C: add one mod by 2
     // ^- lets you flip between players
     game->players[opponent].ships;
+    if (game->status != INITIALIZED) {
+        return 0;
+    }
+    else if (game->players[0].ships == 0) {
+        game->status = PLAYER_0_WINS;
+    } else if (game->players[1].ships == 0){
+        game->status = PLAYER_1_WINS;
+    } else if (opponent == 0) {
+        game->status = PLAYER_0_TURN;
+    } else if (opponent == 1) {
+        game->status = PLAYER_1_TURN;
+    }
 
     // BOUNDS
     if (x > 7 || y > 7 || x < 0 || y < 0) {
         return 0;
     }
 
-    // hit or miss
-    bool hit;
-    if (hit) {
-        // update game; flip bit to 0
+    if (xy_to_bitval(x, y) != 0ULL) {
+//        repl_print_hits((player_info *) game->players[opponent].ships, (char_buff *) game);
         return 1;
     } else {
         //update game
         return 0;
     }
-
-//    repl_print_hits();
-    // If hit ship, return 1, if miss ship return 0.
 
     // TODO: remove the bit in the other players board
     // bitmask to update the bit in player_info
@@ -75,6 +80,7 @@ int game_fire(game *game, int player, int x, int y) {
      * If the opponents ships value is 0, they have no remaining ships, and
      * TODO: you should set the game state to PLAYER_1_WINS or PLAYER_2_WINS depending on who won.
      */
+
     // check game over boolean
 }
 
@@ -94,7 +100,6 @@ struct game *game_get_current() {
 int game_load_board(struct game *game, int player, char *spec) {
 // big ugly function; 30 Lines of code
 // Loop through each spec make sure sure boats stay in bounds(Example board: C00b02D23S47p71)
-
     if (spec == NULL) {
         return -1;
     }
@@ -103,7 +108,6 @@ int game_load_board(struct game *game, int player, char *spec) {
     bool isTakenD = false;
     bool isTakenP = false;
     bool isTakenS = false;
-
     // 15 characters
     for (int i = 0; i < 15; i += 3) {
         if (!isdigit(spec[i+1]) || !isdigit(spec[i+2])) {
@@ -112,7 +116,7 @@ int game_load_board(struct game *game, int player, char *spec) {
         int x = spec[i + 1]-'0';
         int y = spec[i + 2]-'0';
 
-        if ((void *) spec[i] == NULL) {
+        if (spec[i] == NULL) {
             return -1;
         }
         char temp = tolower(spec[i]);
@@ -175,6 +179,9 @@ int game_load_board(struct game *game, int player, char *spec) {
 
     }
     if (isTakenB == true && isTakenC == true && isTakenD == true && isTakenP && isTakenS == true) {
+//        game->status = INITIALIZED;
+//        game_init_player_info((player_info *) &game->players->ships);
+//        game->players->ships = 1ull;
         return 1;
     }
     return -1;

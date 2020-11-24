@@ -97,7 +97,6 @@ void repl_print_ships(player_info *player_info, char_buff *buffer) {
     // row border
 //    printf("  0 1 2 3 4 5 6 7 \n");
     // look at each row
-
     cb_append(buffer, "  0 1 2 3 4 5 6 7 \n");
     for (int y = 0; y <= 7; y++) {
         cb_append_int(buffer, y);
@@ -120,36 +119,25 @@ void repl_print_ships(player_info *player_info, char_buff *buffer) {
  */
 
 void repl_print_hits(struct player_info *player_info, struct char_buff *buffer) {
-    int row, column;
-    // row border
-    printf("  0 1 2 3 4 5 6 7 \n");
-    for (column = 0; column <= 7; column++) {
-        // column border
-        printf("%d", column);
+    cb_append(buffer, "  0 1 2 3 4 5 6 7 \n");
+    for (int y = 0; y <= 7; y++) {
+        cb_append_int(buffer, y);
+//        cb_append(buffer, (const char *) &player_info->ships);
 
-        for (row = 0; row <= 7; row++) {
-            printf("%s", buffer->buffer);
-            // new line at last column
-
-            if (player_info->shots == player_info->hits) {
-                printf(" H");
-            } else if ((player_info->shots & xy_to_bitval(row, column)) == 0) {
-                printf(" M");
+        //look at each column
+        for (int x = 0; x <= 7; x++) {
+            if ((player_info->hits & xy_to_bitval(x, y)) != 0ULL) {
+                cb_append(buffer, " H");
+            }else if ((player_info->shots & xy_to_bitval(x, y)) != 0ULL) {
+                cb_append(buffer, " M");
             } else {
-                printf("  ");
-            }
-            if (row == 7) {
-                printf("\n");
+                cb_append(buffer, "  ");
             }
         }
+        cb_append(buffer, " \n");
     }
-    // almost the same as step 4 except with hits and misses and shots
     /* TODO: Step 6 - Implement this to print out a visual representation of the shots
-     // that the player has taken and if they are a hit or not.
-     TODO: You will again need to use bit-masking,
-     * but this time you will need to consult two values: both hits and shots values in the players game struct.
      // Bit masking: is it a 1 or 0. If there its a one. Step one is Bit masking
      // If a shot was fired at a given spot and it was a hit, print 'H', if it was a miss, print 'M'.
-     // If no shot was taken at a position, print a space character ' '
      */
 }
