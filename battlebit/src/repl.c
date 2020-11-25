@@ -119,10 +119,9 @@ void repl_print_hits(struct player_info *player_info, struct char_buff *buffer) 
         for (int x = 0; x <= 7; x++) {
             if ((player_info->hits & xy_to_bitval(x, y)) != 0ULL) {
                 cb_append(buffer, " H");
-            }
-            if ((player_info->shots & xy_to_bitval(x, y)) != 0ull) {
+            } else if ((player_info->shots & xy_to_bitval(x, y)) != 0ull) {
                     cb_append(buffer, " M");
-            }else {
+            } else {
                 cb_append(buffer, "  ");
             }
         }
