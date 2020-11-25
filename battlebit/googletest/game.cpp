@@ -223,8 +223,8 @@ TEST(add_ship_horizontal,empty_ship){
     struct game * gameon = game_get_current();
     struct player_info *player_info = &gameon->players[0];
     game_init_player_info(player_info);
-    //char * spec = "C00b02D23S47p71";
-    //game_load_board(gameon, 0, spec);
+    char * spec = "C00b02D23S47p71";
+    game_load_board(gameon, 0, spec);
     //EXPECT_TRUE(strcmp("Baz", "Baz") == 0);
     ASSERT_EQ(add_ship_horizontal(player_info,1,8,0),-1);
 }
@@ -279,7 +279,7 @@ TEST(game_load_board,incomplete_spec){
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
     spec = "C-1-1b02D23S47p71";//invalid spec
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
-//    spec = "A00b02D23S47p71";//invalid spec
+    spec = "A00b02D23S47p71";//invalid spec
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
     spec = "C00c02D23S47p71";//invalid spec- Multiple carriers
     ASSERT_EQ(game_load_board(gameon,0,spec),-1);
@@ -323,8 +323,8 @@ TEST(game_status, is_correct) {
     ASSERT_EQ(PLAYER_0_TURN, pGame->status);
 
     // player 0 fires, now PLAYER_1_TURN
-//    ASSERT_EQ(game_fire(pGame,0,0,0),1);
-//    ASSERT_EQ(PLAYER_1_TURN, pGame->status);
+    ASSERT_EQ(game_fire(pGame,0,0,0),1);
+    ASSERT_EQ(PLAYER_1_TURN, pGame->status);
 
     player_info *player0 = &pGame->players[0];
     player0->ships = 1ull; // set ships to only in (1, 1)

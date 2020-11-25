@@ -29,7 +29,7 @@ void init_server() {            // initialize game server struct
 
 
 int handle_client_connect(int player) {
-    pthread_mutex_t unlock;
+//    pthread_mutex_t unlock;
     int client_socket_fd = SERVER->player_sockets[player];
 
     char raw_buffer[2000];
@@ -46,7 +46,7 @@ int handle_client_connect(int player) {
         if (read_size > 0) {
             raw_buffer[read_size] = '\0';
 
-            pthread_mutex_unlock(&unlock);
+//            pthread_mutex_unlock(&unlock);
             cb_append(input_buffer, raw_buffer);
 
             char *command = cb_tokenize(input_buffer, " \r\n");
@@ -75,12 +75,12 @@ void server_broadcast(char_buff *msg) {
     handle_client_connect(msg);
     // TODO: send message to all players using client sockets
     // player sockets and administrative console
-        // that's why you have an array of player sockets
+    // that's why you have an array of player sockets
 
 }
 
 int run_server() {
-    pthread_mutex_t lock;
+//    pthread_mutex_t lock;
 
     int server_socket_fd = socket(AF_INET,
                                   SOCK_STREAM,
@@ -122,21 +122,21 @@ int run_server() {
         int player = 0;
 
         while ((client_socket_fd == accept(server_socket_fd,
-                                          (struct sockaddr *) &client,
-                                          &size_from_connect)) > 0) {
-            SERVER->player_sockets[player] = pthread_create((pthread_t *) &SERVER->player_threads, NULL, (void *) run_server(), player);
+                                           (struct sockaddr *) &client,
+                                           &size_from_connect)) > 0) {
+            SERVER->player_sockets[player] = pthread_create((pthread_t *) &SERVER->player_threads, NULL, (void *) run_server, player);
             player++;
             if (player > 1) {
                 break;
             }
         }
     }
-    pthread_mutex_lock(&lock);
+//    pthread_mutex_lock(&lock);
 }
 
 int server_start() {
 
     init_server();
-    pthread_create(&SERVER->server_thread, NULL, (void *) run_server(), NULL);
+    pthread_create(&SERVER->server_thread, NULL, (void *) run_server, NULL);
 
 }

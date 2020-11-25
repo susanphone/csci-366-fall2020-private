@@ -92,46 +92,61 @@ void repl_print_board(game *game, int player, char_buff *buffer) {
     cb_append(buffer, ".........battleBit\n\n");
 }
 
-void repl_print_ships(player_info *player_info, char_buff *buffer) {
 // Taking ships and render 8X8 ships grid.
+void repl_print_ships(player_info *player_info, char_buff *buffer) {
+
+    // top row of numbers
     cb_append(buffer, "  0 1 2 3 4 5 6 7 \n");
     for (int y = 0; y <= 7; y++) {
+        // numbers on the left side
         cb_append_int(buffer, y);
+
         //look at each column
         for (int x = 0; x <= 7; x++) {
             if ((player_info->ships & xy_to_bitval(x, y)) != 0ULL) {
+
+                // ADD ship using star
                 cb_append(buffer, " *");
             } else {
+
+                // Otherwise use a space to indicate water
                 cb_append(buffer, "  ");
             }
         }
+
+        // End each row with a newline
         cb_append(buffer, " \n");
     }
 
 }
 
-
+// Render the opponents board using hits, misses, and spaces to represent water
 void repl_print_hits(struct player_info *player_info, struct char_buff *buffer) {
+    // top row of numbers
     cb_append(buffer, "  0 1 2 3 4 5 6 7 \n");
     for (int y = 0; y <= 7; y++) {
+        // numbers of left side
         cb_append_int(buffer, y);
+
         //look at each column
         for (int x = 0; x <= 7; x++) {
             if ((player_info->hits & xy_to_bitval(x, y)) != 0ULL) {
+
+                // ADD H for hit of opponent's ship
                 cb_append(buffer, " H");
             } else if ((player_info->shots & xy_to_bitval(x, y)) != 0ull) {
-                    cb_append(buffer, " M");
+
+                // Add M for miss of opponent's ship
+                cb_append(buffer, " M");
             } else {
+
+                // Otherwise use a space to represent untouched water
                 cb_append(buffer, "  ");
             }
         }
+
+        //End each row with a new line
         cb_append(buffer, " \n");
     }
-    /* TODO: Step 6 - Implement this to print out a visual representation of the shots
-     TODO: You will again need to use bit-masking,
-     * but this time you will need to consult two values: both hits and shots values in the players game struct.
-     // Bit masking: is it a 1 or 0. If there its a one. Step one is Bit masking
-     // If a shot was fired at a given spot and it was a hit, print 'H', if it was a miss, print 'M'.
-     // If no shot was taken at a position, print a space character ' '
-     */
+
 }
