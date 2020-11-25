@@ -1,5 +1,0 @@
-[ 24%] Built target battleBit_lib
-[ 48%] Built target battleBit
-[ 54%] Built target gtest
-[ 60%] Built target gtest_main
-[ 63%] Building ASM_NASM object googletest/CMakeFiles/homework_3.dir/homework_3.asm.o
