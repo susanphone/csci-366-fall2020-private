@@ -110,10 +110,6 @@ void repl_print_ships(player_info *player_info, char_buff *buffer) {
 
 }
 
-//TODO: Use two nest for loops for 2 by 2 array
-/* TODO: Step 4 - print out the visual ships representation for the console.
- *  You will need to use bit masking for each position to determine if a ship is at the position or not.
- */
 
 void repl_print_hits(struct player_info *player_info, struct char_buff *buffer) {
     cb_append(buffer, "  0 1 2 3 4 5 6 7 \n");
@@ -121,11 +117,15 @@ void repl_print_hits(struct player_info *player_info, struct char_buff *buffer) 
         cb_append_int(buffer, y);
         //look at each column
         for (int x = 0; x <= 7; x++) {
-            if ((player_info->hits & xy_to_bitval(x, y)) != 0ULL) {
-                cb_append(buffer, " H");
-            }else if ((player_info->shots & xy_to_bitval(x, y)) != 0ULL) {
-                cb_append(buffer, " M");
-            } else {
+            if ((player_info->shots & xy_to_bitval(x, y)) != 0ULL) {
+                if (player_info->hits & xy_to_bitval(x, y) != 0Ull) {
+                    player_info->hits++;
+                    cb_append(buffer, " H");
+                } else {
+                    player_info->shots++;
+                    cb_append(buffer, "  M");
+                }
+            }else {
                 cb_append(buffer, "  ");
             }
         }

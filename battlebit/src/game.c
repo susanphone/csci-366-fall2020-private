@@ -7,14 +7,16 @@
 #include "game.h"
 #include <ctype.h>
 
-/**TODO: STEP 10 - Synchronization: the GAME structure will be accessed by both players interacting
+
+/** STEP 10 - Synchronization: the GAME structure will be accessed by both players interacting
  * asynchronously with the server.  Therefore the data must be protected to avoid race conditions.
  * Add the appropriate synchronization needed to ensure a clean battle.
- */
- // done by inspections
- // mutex in file and log all interactions
- // create a lock and sync to game state
- pthread_mutex_lock();
+*/
+// done by inspections
+// mutex in file and log all interactions
+// create a lock and sync to game state
+
+
 
 static game *GAME = NULL;
 
@@ -39,39 +41,39 @@ int game_fire(game *game, int player, int x, int y) {
 
     int opponent = (player + 1) % 2; // stupid trick in C: add one mod by 2
     // ^- lets you flip between players
-//    game->players[player].ships;
-//    game_init_player_info((player_info *) opponent);
-
+    GAME->players[player].ships;
+    game_get_current();
     //empty_game
-    if (game->players->ships) {
-        game_init();
-    } else {
-        return 0;
-    }
-    //game status winner
-    if (game->players[0].ships == 0) {
-        game->status = PLAYER_0_WINS;
-    } else if (game->players[1].ships == 0){
-        game->status = PLAYER_1_WINS;
-    }
+    if (&GAME->status == CREATED) {
+            return 0;
+        }
+
+
     // game status players turn
-    if (opponent == 0) {
-        game->status = PLAYER_0_TURN;
-    } else if (opponent == 1) {
-        game->status = PLAYER_1_TURN;
+    if (GAME->status == PLAYER_0_TURN) {
+        GAME->status = PLAYER_1_TURN;
+    } else {
+        GAME->status = PLAYER_0_TURN;
     }
 
     // BOUNDS
     if (x > 7 || y > 7 || x < 0 || y < 0) {
         return 0;
     }
-
     // hit or miss
-    if (xy_to_bitval(x, y) != 0ULL) {
-        game->players[opponent].hits++;
+    if ((GAME->players[opponent].ships & xy_to_bitval(x, y)) != 0ULL) {
+//        GAME->players[player].hits++;
+//        GAME->players[player].shots++;
+        GAME->players[opponent].ships ^= xy_to_bitval(x, y);
+        if (GAME->players[0].ships == 0) {
+            GAME->status = PLAYER_1_WINS;
+        } else if (game->players[1].ships == 0){
+            GAME->status = PLAYER_0_WINS;
+        }
+
         return 1;
     } else {
-        game->players[opponent].shots++;
+        GAME->players[player].shots++;
         return 0;
     }
 
@@ -105,7 +107,6 @@ struct game *game_get_current() {
 }
 
 int game_load_board(struct game *game, int player, char *spec) {
-
     // TODO: if spec contains other letters, return -1
     if (spec == NULL) {
         return -1;
@@ -195,6 +196,14 @@ int game_load_board(struct game *game, int player, char *spec) {
     if (isTakenB == true && isTakenC == true && isTakenD == true && isTakenP && isTakenS == true)
     {
 //        GAME->players->ships = 17;
+        game_get_current();
+        if (GAME->players == 2) {
+            GAME->status = INITIALIZED;
+        }
+
+        if (player == 1) {
+            GAME->status = PLAYER_0_TURN;
+        }
         return 1;
     }
     return -1;

@@ -2,6 +2,8 @@
 // Created by carson on 5/20/20.
 //
 
+
+// TODO: added pthread locks into file
 #include "stdio.h"
 #include "stdlib.h"
 #include "server.h"
@@ -27,6 +29,7 @@ void init_server() {            // initialize game server struct
 
 
 int handle_client_connect(int player) {
+    pthread_mutex_t unlock;
     int client_socket_fd = SERVER->player_sockets[player];
 
     char raw_buffer[2000];
@@ -43,6 +46,7 @@ int handle_client_connect(int player) {
         if (read_size > 0) {
             raw_buffer[read_size] = '\0';
 
+            pthread_mutex_unlock(&unlock);
             cb_append(input_buffer, raw_buffer);
 
             char *command = cb_tokenize(input_buffer, " \r\n");
@@ -76,6 +80,8 @@ void server_broadcast(char_buff *msg) {
 }
 
 int run_server() {
+    pthread_mutex_t lock;
+
     int server_socket_fd = socket(AF_INET,
                                   SOCK_STREAM,
                                   IPPROTO_TCP);
@@ -115,7 +121,7 @@ int run_server() {
         int client_socket_fd;
         int player = 0;
 
-        while ((client_socket_fd = accept(server_socket_fd,
+        while ((client_socket_fd == accept(server_socket_fd,
                                           (struct sockaddr *) &client,
                                           &size_from_connect)) > 0) {
             SERVER->player_sockets[player] = pthread_create((pthread_t *) &SERVER->player_threads, NULL, (void *) run_server(), player);
@@ -125,6 +131,7 @@ int run_server() {
             }
         }
     }
+    pthread_mutex_lock(&lock);
 }
 
 int server_start() {
