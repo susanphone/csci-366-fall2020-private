@@ -62,8 +62,8 @@ int game_fire(game *game, int player, int x, int y) {
     }
     // hit or miss
     if ((GAME->players[opponent].ships & xy_to_bitval(x, y)) != 0ULL) {
-//        GAME->players[player].hits++;
-//        GAME->players[player].shots++;
+        GAME->players[player].hits |= xy_to_bitval(x, y);
+//        GAME->players[player].shots;
         GAME->players[opponent].ships ^= xy_to_bitval(x, y);
         if (GAME->players[0].ships == 0) {
             GAME->status = PLAYER_1_WINS;
@@ -73,7 +73,7 @@ int game_fire(game *game, int player, int x, int y) {
 
         return 1;
     } else {
-        GAME->players[player].shots++;
+        GAME->players[player].shots |= xy_to_bitval(x, y);
         return 0;
     }
 
